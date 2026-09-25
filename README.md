@@ -39,9 +39,8 @@
 I build **end-to-end data and AI systems**: lakehouses and warehouses that are actually trustworthy, and LLM/agent layers that are actually evaluated. I care about the parts most demos skip — **idempotent pipelines, tested transformations, typed tools behind real boundaries, measured accuracy, and human-in-the-loop control** before anything touches production data.
 
 - **Data Platforms &amp; Architecture:** Medallion lakehouse design (S3 → Snowflake → dbt → Airflow), dimensional and SCD2 modelling, incremental/MERGE fact loading, keyless cloud storage integrations, and read/write boundary separation by role.
-- **Applied AI &amp; Agents:** LangGraph state machines, bounded tool-calling agents, hybrid RAG (pgvector + knowledge graph), QLoRA fine-tuning with execution-based eval harnesses, text-to-SQL, and LLM enrichment turned into queryable warehouse columns.
-- **MLOps &amp; Reliability:** MLflow experiment tracking, CI/CD gates on model quality, containerized serving, live drift monitoring, and structured tracing — built to be observed, not hoped for.
-- **Systems Thinking Under Pressure:** I decompose ambiguous, high-stakes problems into typed interfaces, deterministic checks and graceful failure modes — so incidents get diagnosed, not guessed at.
+- **Applied AI &amp; Agents:** LangGraph state machines, bounded tool-calling agents, hybrid RAG (pgvector + knowledge graph), QLoRA fine-tuning with execution-based eval harnesses, and LLM enrichment turned into queryable warehouse columns.
+- **Production Reliability &amp; Incident Response:** MLflow experiment tracking, CI/CD quality gates, containerized serving, drift and data-quality monitoring, structured tracing, human-in-the-loop approval gates on anything that mutates production data, and root-cause analysis that reports <code>UNRESOLVED</code> rather than guessing.
 
 ---
 
@@ -97,18 +96,18 @@ I build **end-to-end data and AI systems**: lakehouses and warehouses that are a
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3 align="left">Text-to-SQL Fine-Tuning (QLoRA)</h3>
-      <p><strong>Llama 3.1 8B — Measured, Reproducible Gains</strong></p>
-      <p>Fine-tuned <strong>Llama 3.1 8B</strong> on the Spider benchmark with QLoRA, and proved it worked using a fully automatic <strong>execution-based</strong> evaluation harness (no LLM-as-judge). Execution accuracy rose from <strong>67.89% → 73.89%</strong> on an identical 1,034-example held-out test set — with the largest wins on subqueries (+12.0) and set-operations (+12.5), plus a written error analysis.</p>
+      <h3 align="left">GTSRB Traffic Sign Recognition</h3>
+      <p><strong>Production-Ready 43-Class Computer Vision System</strong></p>
+      <p>Traffic sign classification taken from notebook to deployed service, with reproducible splits, calibrated confidence and structured error analysis. Checkpoint selection keys on <strong>macro F1 rather than accuracy</strong> — because accuracy hid a class sitting at 54.2% recall. <strong>98.90% accuracy, 0.9837 macro F1</strong> on the official 12,630-image test split, with MLflow tracking and a containerised FastAPI inference service.</p>
       <p>
-        <a href="https://github.com/irajput215/fine-tuning-llms-text2sql" target="_blank"><img src="https://img.shields.io/badge/Repository-fine--tuning--llms--text2sql-181717?style=flat-square&logo=github" alt="Repo" /></a>
-        <img src="https://img.shields.io/badge/%2B6.0%20pts%20exec%20accuracy-22C55E?style=flat-square" alt="Gain" />
+        <a href="https://github.com/irajput215/GTSRB-Traffic-Sign-Recognition-Deep-Learning-Project-" target="_blank"><img src="https://img.shields.io/badge/Repository-GTSRB-181717?style=flat-square&logo=github" alt="Repo" /></a>
+        <img src="https://img.shields.io/badge/455%20tests%20%C2%B7%2092%25%20cov-22C55E?style=flat-square" alt="Tests" />
       </p>
       <p>
-        <img src="https://img.shields.io/badge/QLoRA-8B5CF6?style=flat-square" alt="QLoRA" />
-        <img src="https://img.shields.io/badge/vLLM-FFD21E?style=flat-square" alt="vLLM" />
-        <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="HF" />
+        <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
         <img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white" alt="MLflow" />
+        <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
+        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
       </p>
     </td>
   </tr>
@@ -124,7 +123,7 @@ I build **end-to-end data and AI systems**: lakehouses and warehouses that are a
 | :--- | :--- |
 | **Data Engineering &amp; Warehousing** | ![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=flat-square&logo=snowflake&logoColor=white) ![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white) ![Apache Airflow](https://img.shields.io/badge/Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white) ![Apache Spark](https://img.shields.io/badge/Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white) ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white) ![Amazon S3](https://img.shields.io/badge/S3-569A31?style=flat-square&logo=amazons3&logoColor=white) ![Delta Lake](https://img.shields.io/badge/Delta%20Lake-00ADD4?style=flat-square) |
 | **AI, LLM &amp; Agents** | ![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square) ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white) ![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-FFD21E?style=flat-square) ![vLLM](https://img.shields.io/badge/vLLM-FFD21E?style=flat-square) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white) |
-| **MLOps, Cloud &amp; Reliability** | ![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![LangSmith](https://img.shields.io/badge/LangSmith-FF6F61?style=flat-square) ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white) |
+| **MLOps, Cloud &amp; Reliability** | ![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![LangSmith](https://img.shields.io/badge/LangSmith-FF6F61?style=flat-square) |
 | **Backend &amp; Interfaces** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=flat-square) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![React 19](https://img.shields.io/badge/React%2019-61DAFB?style=flat-square&logo=react&logoColor=black) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) |
 
 </div>
@@ -146,61 +145,14 @@ I build **end-to-end data and AI systems**: lakehouses and warehouses that are a
 
 ---
 
-### GitHub Activity
-
-<div align="center">
-  <table border="0">
-    <tr>
-      <td align="center" valign="middle">
-        <a href="https://github.com/irajput215">
-          <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=irajput215&theme=tokyonight" alt="GitHub Stats" height="195" />
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://github.com/irajput215">
-          <img src="https://github-readme-streak-stats.herokuapp.com/?user=irajput215&theme=tokyonight&hide_border=true&background=0d1117&ring=38bdf8&fire=f59e0b&currStreakLabel=38bdf8" alt="GitHub Streak" height="195" />
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" valign="middle">
-        <a href="https://github.com/irajput215">
-          <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=irajput215&theme=tokyonight" alt="Repos Per Language" height="195" />
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://github.com/irajput215">
-          <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=irajput215&theme=tokyonight" alt="Most Commit Language" height="195" />
-        </a>
-      </td>
-    </tr>
-  </table>
-
-  <br />
-
-  <a href="https://github.com/irajput215">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=irajput215&theme=tokyonight" alt="Profile Details" width="100%" />
-  </a>
-
-  <br /><br />
-
-  <!-- To use the classic cards instead, replace the two top summary cards with these
-       (the shared public instance is rate-limited; self-host with a PAT_1 token if it fails):
-       https://github-readme-stats.vercel.app/api?username=irajput215&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=a855f7&text_color=94a3b8
-       https://github-readme-stats.vercel.app/api/top-langs/?username=irajput215&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=94a3b8&langs_count=8
-  -->
-</div>
-
----
-
 ### Core Engineering Tenets
 
-> *"A pipeline you can't re-run isn't a pipeline. An agent you can't measure isn't a system. Architecture is what lets you stay calm when everything is on fire."*
+> *"A pipeline you can't re-run isn't a pipeline. An agent you can't measure isn't a system. Architecture is what keeps a system diagnosable when it fails."*
 
 - **Architecture Before Code:** Sharp boundaries, typed contracts and least-privilege access beat clever one-off scripts — systems should be obvious to the next engineer at 3am.
 - **Measure, Don't Assert:** Every AI claim belongs behind an automatic evaluation harness. If accuracy can't be reproduced on a held-out set, it isn't a result.
 - **Idempotent &amp; Observable by Default:** Re-runnable pipelines, tested transformations, structured traces and honest failure modes — including saying *"unresolved"* rather than guessing.
-- **Pressure Is a Design Input:** Incident response, human-in-the-loop approval gates and graceful degradation are features, not edge cases.
+- **Built for Failure, Not Just Success:** Incident response, human-in-the-loop approval gates and graceful degradation are designed up front, not bolted on after the first outage.
 
 ---
 
